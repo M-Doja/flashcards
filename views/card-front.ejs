@@ -1,0 +1,60 @@
+<% include partials/header %>
+
+
+    <!-- <header>
+      <img src="images/logo.png" alt="">
+      <% if (name) { %>
+      <h2>Welcome <%= name %></h2>
+      <% } %>
+    </header> -->
+    <div style="margin:2em;"></div>
+
+    <div class="namecard text-center">
+
+      <form class="namecard-exit" action="/bye" method="get">
+
+        <button style="float:left;paddingleft:10px;"type="submit" name="button">
+          <img src="/images/close.svg" alt="">
+        </button>
+      </form>
+
+      <br>
+        <h2 class="text-center">Welcome <%= name %>!</h2>
+
+
+
+      <!-- <a href="/bye">Log Out</a> -->
+      <br><br>
+      <section class=`flashcards`>
+        <div class=`card-${side}`>
+          <div class="card-header">
+            <h1 class="card-title"><%= side %></h1>
+            <img src="/images/content-header-answer.png" width="400"alt="">
+          </div>
+          <div id="content">
+            <h2>Question: <%= text %></h2>
+            <p><i>Hint: <%= hint %></i></p>
+
+            <div class="card-flip-wrap">
+              <a href=`/cards/${id}?side=${sideToShow}`>
+                <img class="card-flip" src="/images/flip.svg" alt="">
+              </a>
+            </div>
+            <div class="card-next">
+              <a href='/cards'>
+                <img src="/images/next.svg" alt="">
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <!-- <footer> -->
+
+    <!-- </footer> -->
+
+
+<% include partials/footer %>
